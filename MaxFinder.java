@@ -1,18 +1,20 @@
+package com.generic;
+
 public class MaxFinder {
     public static void main(String[] args) {
-    	Integer a = 2, b = 4, c =5;
+    	Double a = 2.5, b = 4.6, c = 5.9;
     	findMaximum(a,b,c);
     }
-    private static void findMaximum(Integer a, Integer b, Integer c) {
+    private static void findMaximum(Double a, Double b, Double c) {
     	
-        Integer max = a;
+    	Double max = a;
         if (b.compareTo(a) > 0) {
             max = b;
         }
         if (c.compareTo(max) > 0) {
             max = c;
         }
-        System.out.println("max");
+        System.out.println(max);
     
     }
 }
