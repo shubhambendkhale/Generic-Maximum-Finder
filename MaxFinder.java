@@ -2,19 +2,19 @@ package com.generic;
 
 public class MaxFinder {
     public static void main(String[] args) {
-    	Double a = 2.5, b = 4.6, c = 5.9;
-    	findMaximum(a,b,c);
+    	String str1 = "Apple", str2 = "Banana", str3 = "Orange";
+    	findMaximum(str1,str2,str3);
     }
-    private static void findMaximum(Double a, Double b, Double c) {
+    private static void findMaximum(String str1, String str2, String str3) {
     	
-    	Double max = a;
-        if (b.compareTo(a) > 0) {
-            max = b;
+    	String maxString = str1;
+        if (str2.compareTo(str1) > 0) {
+        	maxString = str2;
         }
-        if (c.compareTo(max) > 0) {
-            max = c;
+        if (str3.compareTo(str2) > 0) {
+        	maxString = str3;
         }
-        System.out.println(max);
+        System.out.println(maxString);
     
     }
 }
