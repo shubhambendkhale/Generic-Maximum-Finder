@@ -14,7 +14,7 @@ public class MaxFinder {
                 int size = scanner.nextInt();
                 Integer[] integersArray = new Integer[size];
                 integersArray = printInteger(integersArray, size);
-                Integer integerMax = findIntegerMax(integersArray);
+                Integer integerMax = findMax(integersArray);
                 System.out.println("Maximum integer value is :" + integerMax);
                 break;
             case 2:
@@ -22,7 +22,7 @@ public class MaxFinder {
                 size = scanner.nextInt();
                 Float[] floatsArray = new Float[size];
                 floatsArray = printFloat(floatsArray, size);
-                Float floatMax = findFloatMax(floatsArray);
+                Float floatMax = findMax(floatsArray);
                 System.out.println("Maximum float number is :" + floatMax);
                 break;
             case 3:
@@ -30,7 +30,7 @@ public class MaxFinder {
                 size = scanner.nextInt();
                 String[] stringsArray = new String[size];
                 stringsArray = printString(stringsArray, size);
-                String stringMax = findStringMax(stringsArray);
+                String stringMax = findMax(stringsArray);
                 System.out.println("Maximum String is :" + stringMax);
                 break;
             default:
@@ -62,10 +62,11 @@ public class MaxFinder {
         return stringsArray;
     }
 
-
-    public static Integer findIntegerMax(Integer[] integers) {
-        Integer max = integers[0];
-        for (Integer i : integers) {
+    // Generic type method
+    // We have to extends Comparable otherwise it will give error while using compareTo() method
+    public static <E extends Comparable> E findMax(E[] integers) {
+        E max = integers[0];
+        for (E i : integers) {
             if (i.compareTo(max) > 0) {
                 max = i;
             }
@@ -73,23 +74,4 @@ public class MaxFinder {
         return max;
     }
 
-    public static Float findFloatMax(Float[] floats) {
-        Float max = floats[0];
-        for (Float i : floats) {
-            if (i.compareTo(max) > 0) {
-                max = i;
-            }
-        }
-        return max;
-    }
-
-    public static String findStringMax(String[] strings) {
-        String max = strings[0];
-        for (String i : strings) {
-            if (i.compareTo(max) > 0) {
-                max = i;
-            }
-        }
-        return max;
-    }
 }
